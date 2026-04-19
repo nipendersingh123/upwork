@@ -1,0 +1,11 @@
+# Ignore entire directory
+.env
+service-account.json
+*-service-account*.json
+composer.lock
+vendor/
+storage/
+vendor_old/
+public/uploads/
+node_modules/
+app/Providers/AppServiceProvider.php
