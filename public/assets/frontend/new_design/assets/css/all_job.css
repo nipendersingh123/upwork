@@ -1,0 +1,27 @@
+.range-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    position: absolute;
+    top: -3px;
+    height: 6px;
+}
+
+.range-slider::-webkit-slider-thumb {
+    pointer-events: auto;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border: 3px solid #007456;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    border-color: #009e75;
+}

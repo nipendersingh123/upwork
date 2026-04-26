@@ -1,0 +1,310 @@
+body {
+    font-family: var(--body-font);
+    color: var(--body-color);
+}
+
+
+.custom-scrollbar,
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #70cfb5 transparent;
+}
+
+
+
+/* Styles for Service Card Carousel and pagination */
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 280px;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arrow-btn {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+}
+
+.carousel-container:hover .arrow-btn {
+    opacity: 1;
+}
+
+.pagination-dot {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pagination-dot.active {
+    background-color: #ff6b35 !important;
+    /* Orange color */
+}
+
+.pagination-dot:not(.active) {
+    background-color: rgba(255, 107, 53, 0.4) !important;
+    /* Orange with opacity */
+}
+
+/* Ensure pagination stays inside image area */
+.pagination-dots-container {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 15;
+}
+
+
+/* Styles for Trending Service */
+
+/* Styles for Inner Image Carousel (inside each card) */
+
+.card-image-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 224px;
+}
+
+.card-image-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-image-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.card-image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-arrow-btn {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+}
+
+.card-image-carousel:hover .card-arrow-btn {
+    opacity: 1;
+}
+
+.card-pagination-dot {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-pagination-dot.active {
+    background-color: #ff6b35 !important;
+    /* Orange color */
+}
+
+.card-pagination-dot:not(.active) {
+    background-color: rgba(255, 107, 53, 0.4) !important;
+    /* Orange with opacity */
+}
+
+/* Pagination stays inside image area */
+.card-pagination-container {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 15;
+}
+
+/* Styles for Outer Card Carousel (sliding between cards) */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    height: 224px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.service-card {
+    flex-shrink: 0;
+}
+
+
+
+
+/* styles for select2 */
+.my-select {
+    width: 100% !important;
+}
+
+
+
+
+/* ======= Service Details page carousel and other styles start */
+
+.carousel-container-details {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screen-card {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.screen-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.thumbnail {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0.6;
+    border-color: transparent;
+    flex: 1;
+    min-width: 80px;
+}
+
+.thumbnail:hover {
+    opacity: 0.8;
+}
+
+.thumbnail.active {
+    opacity: 1;
+    border-color: #0d9488;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .carousel-nav-button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .thumbnail {
+        min-width: 60px;
+    }
+}
+
+
+
+.package-tab {
+    cursor: pointer;
+    padding: 12px 24px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.package-tab.active {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: #057a55;
+    background-color: #057a5510;
+    color: #242B36;
+    font-weight: 600;
+    border-width: 2px;
+}
+
+.checkmark {
+    color: #057a55;
+}
+
+.choices[data-type*=select-one] .choices__inner {
+    border-radius: 8px;
+}
+
+/* ===== service details page carousel styles end */
+
+
+/*
+
+const screens = [
+                { title: 'Explore Screen', image: './assets/images/service-details/banner-1.png' },
+                { title: 'Product Screen', image: './assets/images/service-details/banner-2.jpg' },
+                { title: 'Cart Screen', image: './assets/images/service-details/banner-3.jpg' }
+            ];
+
+
+
+            // Package switching (kept as you had it)
+            $('.package-tab').click(function (e) {
+                if (e && typeof e.preventDefault === 'function') e.preventDefault();
+                const packageName = $(this).data('package');
+
+                $('.package-tab').removeClass('active');
+                $(this).addClass('active');
+
+                $('.package-content').addClass('hidden');
+                $(`#${packageName}Package`).removeClass('hidden');
+            });
+
+*/
+
+/* Z-index fix for all Select2 in modals */
+.select2-container--open {
+    z-index: 99999 !important;
+}
+
+.select2-dropdown {
+    z-index: 99999 !important;
+    border-radius: 0.5rem !important;
+}
+
+/* Specific styling ONLY for delivery-time-select */
+.delivery-time-select+.select2-container--default .select2-selection--single {
+    height: 48px !important;
+    padding: 0 16px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.delivery-time-select+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding: 0 !important;
+    line-height: 48px !important;
+}
+
+.delivery-time-select+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 48px !important;
+}
